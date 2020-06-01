@@ -39,8 +39,9 @@ class AppIndicators_IndicatorStatusIcon extends PanelMenu.Button {
         super._init(0.5, indicator._uniqueId);
         this._indicator = indicator;
 
-        this._iconBox = new AppIndicator.IconActor(indicator, Panel.PANEL_ICON_SIZE);
-        this._box = new St.BoxLayout({ style_class: 'panel-status-indicators-box' });
+        this._iconBox = new AppIndicator.IconActor(indicator, Panel.PANEL_ICON_SIZE + 6);
+        this._iconBox.set_y(-2);
+        this._box = new St.Widget({ style_class: 'panel-status-indicators-box' , style: 'height:16px;'});
         this._box.add_style_class_name('appindicator-box');
         this.add_child(this._box);
 
